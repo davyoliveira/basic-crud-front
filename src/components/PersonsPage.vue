@@ -121,13 +121,12 @@ export default {
 
       let data = JSON.stringify(this.editedItem);
         PersonService.updateItem(data).then((result) => {
-          console.log(result);
           if (result.status === 200) {
             this.loadItems();
             this.showFormEdit= false;
             this.editedItem = {};
             this.$toast.success(result.data.message);
-          } else{
+          } else {
             this.$toast.error(result.data.message);
           }
         }).catch((error) => {
@@ -143,7 +142,6 @@ export default {
       this.newItem.id = null;
       let data = JSON.stringify(this.newItem);
         PersonService.addItem(data).then((result) => {
-          console.log(result);
           if (result.status === 200) {
             this.loadItems();
             this.showForm= false;
@@ -158,7 +156,6 @@ export default {
     },
     deleteItem(id){
       PersonService.remove(id).then((result) => {
-        console.log(result);
           if (result.status === 200) {
             this.$toast.success(result.data.message);
             this.loadItems();

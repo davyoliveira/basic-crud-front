@@ -7,7 +7,6 @@ export default {
     return axios.get(`${RESOURCE_NAME}/list`);
   },
   addItem(params) {
-    console.log(params);
     return axios.post(`${RESOURCE_NAME}`, params);
   },
   updateItem(params) {
